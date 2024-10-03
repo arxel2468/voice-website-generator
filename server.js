@@ -24,10 +24,12 @@ app.post('/generate-website', async (req, res) => {
       "messages": [
         {
           "role": "user",
-          "content": `Generate a website based on this command: ${command}. Include HTML, CSS, and JavaScript. The whole code should be in one index.html file including the css and javascript needed. Structure of code: \n<html>\n<head>\n<style>[css here]</style>\n</head>\n<body><script>[javascript here]</script></body>\n</html>\n`
+          "content": `Generate a complete website based on the following command: "${command}". The entire code should be structured within one 'index.html' file, which includes internal HTML, CSS, and JavaScript in the correct sections. The code structure should follow this format:\n<html>\n<head>\n<style>[css here]</style>\n</head>\n<body><script>[javascript here]</script></body>\n</html>\n
+
+Ensure that the website is fully functional based on the command. Provide clean, efficient, and organized code for responsive design.`
         }
       ],
-      "model": "llama-3.1-70b-versatile",
+      "model": "mixtral-8x7b-32768",
       "temperature": 0.5, // Adjust temperature for more consistent output
       "max_tokens": 1024,
       "top_p": 1,
